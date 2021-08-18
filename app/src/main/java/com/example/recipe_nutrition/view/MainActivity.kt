@@ -1,4 +1,4 @@
-package com.example.recipe_nutrition
+package com.example.recipe_nutrition.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.recipe_nutrition.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +21,11 @@ class MainActivity : AppCompatActivity() {
 
         //setting up the nav views to switch between fragments
         navController = findNavController(R.id.navHostFragment)
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.findRecipesFragment, R.id.myRecipesFragment, R.id.nutritionFragment))
+        val appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.findRecipesFragment,
+            R.id.myRecipesFragment,
+            R.id.nutritionFragment
+        ))
         bottomNavigationView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
