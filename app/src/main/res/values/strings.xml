@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Recipe_Nutrition</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="find_recipes_fragment">Find Recipes</string>
+    <string name="my_recipes_fragment">My Recipes</string>
+    <string name="nutrition_fragment">Nutrition</string>
+</resources>
