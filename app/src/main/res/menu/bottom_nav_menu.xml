@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/findRecipesFragment"
+        android:title="@string/find_recipes_fragment"
+        android:icon="@drawable/ic_restaurant_menu" />
+
+    <item
+        android:id="@+id/myRecipesFragment"
+        android:title="@string/my_recipes_fragment"
+        android:icon="@drawable/ic_menu_book" />
+
+    <item
+        android:id="@+id/nutritionFragment"
+        android:title="@string/nutrition_fragment"
+        android:icon="@drawable/ic_directions_run" />
+
 </menu>

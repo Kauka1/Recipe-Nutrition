@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //setting up the nav views to switch between fragments
-        val navController = findNavController(R.id.navHostFragment)
+        navController = findNavController(R.id.navHostFragment)
         val appBarConfiguration = AppBarConfiguration(setOf(R.id.findRecipesFragment, R.id.myRecipesFragment, R.id.nutritionFragment))
         bottomNavigationView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)

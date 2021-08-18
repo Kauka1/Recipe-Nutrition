@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/my_nav">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/findRecipesFragment">
 
+    <fragment
+        android:id="@+id/findRecipesFragment"
+        android:name="com.example.recipe_nutrition.FindRecipesFragment"
+        android:label="Find Recipes"
+        tools:layout="@layout/fragment_find_recipes" />
+    <fragment
+        android:id="@+id/myRecipesFragment"
+        android:name="com.example.recipe_nutrition.MyRecipesFragment"
+        android:label="My Recipes"
+        tools:layout="@layout/fragment_my_recipes" />
+    <fragment
+        android:id="@+id/nutritionFragment"
+        android:name="com.example.recipe_nutrition.NutritionFragment"
+        android:label="Nutrition"
+        tools:layout="@layout/fragment_nutrition" />
 </navigation>
