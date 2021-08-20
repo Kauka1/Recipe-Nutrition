@@ -34,6 +34,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    configurations.all() {
+        resolutionStrategy.force "org.antlr:antlr4-runtime:4.5.3"
+        resolutionStrategy.force "org.antlr:antlr4-tool:4.5.3"
+    }
 }
 
 dependencies {
@@ -59,12 +63,12 @@ dependencies {
 
     // Room components
     implementation "androidx.room:room-runtime:2.2.5"
-    kapt "androidx.room:room-compiler:2.2.5"
+    kapt "androidx.room:room-compiler:2.3.0"
     implementation "androidx.room:room-ktx:2.2.5"
     androidTestImplementation "androidx.room:room-testing:2.2.5"
 
     // Data binding
-    kapt "com.android.databinding:compiler:3.2.0-alpha10"
+    //kapt "com.android.databinding:compiler:3.2.0-alpha10"
     kapt "androidx.databinding:databinding-common:4.1.0"
 
     // DataStore
