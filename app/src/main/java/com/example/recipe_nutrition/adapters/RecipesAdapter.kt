@@ -11,7 +11,7 @@ import com.example.recipe_nutrition.util.RecipesDiffUtil
 
 class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 
-    private var recipe = emptyList<Result>()
+    private var recipes = emptyList<Result>()
 
     //RecipesRowLayoutBinding is the name made automatically from recipes_row_layout xml style
     class MyViewHolder(private val binding: RecipesRowLayoutBinding) :
@@ -41,21 +41,21 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 
     //stores current item from recycler view
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentResult = recipe[position]
+        val currentRecipe = recipes[position]
 
         //makes recylerview update each time we get data from api
-        holder.bind(currentResult)
+        holder.bind(currentRecipe)
     }
 
     override fun getItemCount(): Int {
-        return recipe.size
+        return recipes.size
     }
 
     //sets data of recipes, will be called from find recipe fragment
     fun setData(newData: FoodRecipe){
-        val recipesDiffUtil = RecipesDiffUtil(recipe, newData.results)
+        val recipesDiffUtil = RecipesDiffUtil(recipes, newData.results)
         val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
-        recipe = newData.results
+        recipes = newData.results
 
         //updates views with new data
         diffUtilResult.dispatchUpdatesTo(this)
