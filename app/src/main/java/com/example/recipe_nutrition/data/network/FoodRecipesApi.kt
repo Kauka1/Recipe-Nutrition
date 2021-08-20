@@ -1,4 +1,4 @@
-package com.example.recipe_nutrition
+package com.example.recipe_nutrition.data.network
 
 import com.example.recipe_nutrition.models.FoodRecipe
 import retrofit2.Response
