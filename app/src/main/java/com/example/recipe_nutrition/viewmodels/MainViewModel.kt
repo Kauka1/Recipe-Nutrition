@@ -32,10 +32,35 @@ class MainViewModel @ViewModelInject constructor(
     //EVERYTHING BELOW IS FOR RETROFIT
     //holds all responses from api
     var recipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
+    var searchedRecipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
 
     //calls the safeCall method
     fun getRecipes(queries: Map<String, String>) = viewModelScope.launch {
         getRecipesSafeCall(queries)
+    }
+
+    fun searchRecipes(searchQuery: Map<String, String>) = viewModelScope.launch {
+        searchRecipesSafeCall(searchQuery)
+    }
+
+    private suspend fun searchRecipesSafeCall(searchQuery: Map<String, String>) {
+
+        //Will first set the response to loading for ui purposes
+        searchedRecipesResponse.value = NetworkResult.Loading()
+
+        //checks for internet connection
+        if(hasInternetConnection()){
+            try {
+                val response = repository.remote.searchRecipes(searchQuery)
+                searchedRecipesResponse.value = handleFoodRecipesResponse(response)
+
+            } catch (e: Exception){
+                searchedRecipesResponse.value = NetworkResult.Error("Recipes not found!")
+            }
+
+        } else {
+            searchedRecipesResponse.value = NetworkResult.Error("No Internet Connection")
+        }
     }
 
     //Gets the data from api, will return actual data or various error messages
