@@ -2,14 +2,15 @@ package com.example.recipe_nutrition.view.fragments.findRecipes
 
 import android.os.Bundle
 import android.util.Log
+import android.view.*
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipe_nutrition.viewmodels.MainViewModel
 import com.example.recipe_nutrition.R
@@ -24,7 +25,9 @@ import kotlinx.android.synthetic.main.fragment_find_recipes.view.*
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class FindRecipesFragment : Fragment() {
+class FindRecipesFragment : Fragment(), SearchView.OnQueryTextListener {
+
+    private val args by navArgs<FindRecipesFragmentArgs>()
 
     private var _binding: FragmentFindRecipesBinding? = null
     private val binding get() = _binding!!
@@ -48,9 +51,16 @@ class FindRecipesFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.mainViewModel = mainViewModel
 
+        setHasOptionsMenu(true)
+
         setupRecyclerView()
         //calls this on start
         readDatabase()
+
+        //opens up the bottom menu to filter the search results
+        binding.recipesFab.setOnClickListener{
+            findNavController().navigate(R.id.action_findRecipesFragment_to_recipesBottomSheet)
+        }
 
         return binding.root
     }
@@ -59,7 +69,7 @@ class FindRecipesFragment : Fragment() {
     private fun readDatabase() {
         lifecycleScope.launch {
             mainViewModel.readRecipes.observeOnce(viewLifecycleOwner, {database ->
-                if(database.isNotEmpty()){
+                if(database.isNotEmpty() && !args.backFromBottomSheet){
                     Log.d("RecipesFragment", "readApiData Called!")
                     mAdapter.setData(database[0].foodRecipe)
                     hideShimmerEffect()
@@ -104,6 +114,24 @@ class FindRecipesFragment : Fragment() {
         showShimmerEffect()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.recipes_menu, menu)
+
+        val search = menu.findItem(R.id.menu_search)
+        val searchView = search.actionView as? SearchView
+        searchView?.isSubmitButtonEnabled = true
+        searchView?.setOnQueryTextListener(this)
+    }
+
+
+    override fun onQueryTextSubmit(p0: String?): Boolean {
+        return true
+    }
+
+    override fun onQueryTextChange(p0: String?): Boolean {
+        return true
+    }
+
     //if error is recieved from a search, load up the previous data rather than blank screen
     private fun loadDataFromCache(){
         lifecycleScope.launch {
@@ -128,4 +156,5 @@ class FindRecipesFragment : Fragment() {
         //avoiding memory leaks
         _binding = null
     }
+
 }

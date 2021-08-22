@@ -15,4 +15,11 @@
     <color name="red">#FF4646</color>
     <color name="yellow">#FFC114</color>
     <color name="green">#00C980</color>
+
+    //chips
+    <color name="checkedChipBackgroundColor">#50FF4646</color>
+    <color name="chipBackgroundColor">@color/lightGray</color>
+    <color name="checkedChipTextColor">@color/colorPrimary</color>
+    <color name="chipTextColor">@color/darkGray</color>
+
 </resources>
