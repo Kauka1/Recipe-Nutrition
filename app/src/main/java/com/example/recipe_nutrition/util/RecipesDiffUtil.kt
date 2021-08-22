@@ -4,9 +4,9 @@ import androidx.recyclerview.widget.DiffUtil
 import com.example.recipe_nutrition.models.Result
 
 //checks to see if items on list are same or different before updating, will save performance
-class RecipesDiffUtil(
-    private val oldList: List<Result>,
-    private val newList: List<Result>
+class RecipesDiffUtil<T>(
+    private val oldList: List<T>,
+    private val newList: List<T>
 ): DiffUtil.Callback() {
 
     override fun getOldListSize(): Int {

@@ -21,5 +21,10 @@
     <color name="chipBackgroundColor">@color/lightGray</color>
     <color name="checkedChipTextColor">@color/colorPrimary</color>
     <color name="chipTextColor">@color/darkGray</color>
+    
+    <color name="actionBarBackgroundColor">@color/colorPrimary</color>
+    <color name="strokeColor">@color/lightMediumGray</color>
+    <color name="cardBackGroundColor">@color/white</color>
+    <color name="titleColor">@color/darker</color>
 
 </resources>

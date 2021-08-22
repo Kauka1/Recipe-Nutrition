@@ -17,6 +17,9 @@
             android:name="backFromBottomSheet"
             app:argType="boolean"
             android:defaultValue="false" />
+        <action
+            android:id="@+id/action_findRecipesFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
     </fragment>
     <fragment
         android:id="@+id/myRecipesFragment"
@@ -37,4 +40,13 @@
             android:id="@+id/action_recipesBottomSheet_to_findRecipesFragment"
             app:destination="@id/findRecipesFragment" />
     </dialog>
+    <activity
+        android:id="@+id/detailsActivity"
+        android:name="com.example.recipe_nutrition.view.DetailsActivity"
+        android:label="Details"
+        tools:layout="@layout/activity_details" >
+        <argument
+            android:name="result"
+            app:argType="com.example.recipe_nutrition.models.Result" />
+    </activity>
 </navigation>

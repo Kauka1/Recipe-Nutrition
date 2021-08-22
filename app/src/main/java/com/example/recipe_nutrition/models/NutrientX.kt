@@ -1,8 +1,11 @@
 package com.example.recipe_nutrition.models
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class NutrientX(
     @SerializedName("amount")
     val amount: Double,
@@ -14,4 +17,4 @@ data class NutrientX(
     val title: String,
     @SerializedName("unit")
     val unit: String
-)
+): Parcelable
