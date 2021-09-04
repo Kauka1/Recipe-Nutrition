@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/delete_favorite_recipe_menu"
-        android:title="Delete Favorite Menu"
+        android:title="@string/delete_favorite_menu"
         android:icon="@drawable/ic_delete"
         app:showAsAction="ifRoom"
         android:iconTint="@color/white"

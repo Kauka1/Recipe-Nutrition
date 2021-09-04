@@ -18,8 +18,9 @@ import kotlinx.android.synthetic.main.fragment_my_recipes.view.*
 @AndroidEntryPoint
 class MyRecipesFragment : Fragment() {
 
-    private val mAdapter: MyRecipesAdapter by lazy { MyRecipesAdapter(requireActivity())}
     private val mainViewModel: MainViewModel by viewModels()
+    private val mAdapter: MyRecipesAdapter by lazy { MyRecipesAdapter(requireActivity(), mainViewModel)}
+
 
     private var _binding: FragmentMyRecipesBinding? = null
     private val binding get() = _binding!!
@@ -47,5 +48,6 @@ class MyRecipesFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+        mAdapter.clearContextualActionMode()
     }
 }
