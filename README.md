@@ -16,6 +16,9 @@ This is an Android application that allows users to find new food recipes with k
 ## TODO:
   - <img src="https://github.com/Kauka1/recipe-nutrition/blob/main/app/Pictures/cancel.png" height="15px"/> Keep track of daily/weekly micronutrients
 
+## App Icon
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
 ## Built With:
 - [Android Studio & SDK Tools](https://developer.android.com/studio/) - Fastest tools for building apps on every type of Android device.
 - [Retrofit](https://github.com/square/retrofit) - Fastest tools for building apps on every type of Android device.
