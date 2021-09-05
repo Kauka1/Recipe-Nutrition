@@ -2,10 +2,10 @@
 <img src="https://github.com/Kauka1/recipe-nutrition/blob/main/app/Pictures/recipe-book.png" height="100px"/> <br>
 This is an Android application that allows users to find new food recipes with keywords or text search.  The app also provides nutirional and step-by-step cooking instructions for all its recipies. This simple, yet functional application uses Spoonacular api to retrieve data.
 
-# Screenshots:
+## Screenshots:
 <img src="https://github.com/Kauka1/recipe-nutrition/blob/main/app/Pictures/mockup.png" height="400px"/>
 
-# Features:
+## Features:
   - ✔️ Search for recipes with popular filters
   - ✔️ Save any found recipes for quick lookup later
   - ✔️ Caches previously searched queries
@@ -13,5 +13,10 @@ This is an Android application that allows users to find new food recipes with k
   - ✔️ Gives cooking instructions
   - ✔️ Links to the source website of the recipe
 
-# TODO:
-  - ![image](https://user-images.githubusercontent.co
+## TODO:
+  - <img src="https://github.com/Kauka1/recipe-nutrition/blob/main/app/Pictures/cancel.png" height="15px"/> Keep track of daily/weekly micronutrients
+
+## Built With:
+- [Android Studio & SDK Tools](https://developer.android.com/studio/) - Fastest tools for building apps on every type of Android device.
+- [Retrofit](https://github.com/square/retrofit) - Fastest tools for building apps on every type of Android device.
+- [JsonToKotlinClass](https://github.com/wuseal/JsonToKotlinClass) - Converts JSON to Kotlin data classes
