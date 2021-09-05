@@ -6,3 +6,12 @@ This is an Android application that allows users to find new food recipes with k
 <img src="https://github.com/Kauka1/recipe-nutrition/blob/main/app/Pictures/mockup.png" height="400px"/>
 
 # Features:
+  - ✔️ Search for recipes with popular filters
+  - ✔️ Save any found recipes for quick lookup later
+  - ✔️ Caches previously searched queries
+  - ✔️ Shows users the ingredients used for the recipe
+  - ✔️ Gives cooking instructions
+  - ✔️ Links to the source website of the recipe
+
+# TODO:
+  - ![image](https://user-images.githubusercontent.co
